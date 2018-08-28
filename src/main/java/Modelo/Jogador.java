@@ -24,7 +24,7 @@ public class Jogador {
         this.side = side;
     }
 
-    public void inicializarPecas(Point pt, Personagem perso) throws OutOfBaseException, OccupiedException {
+    public void inicializarPecas(Point pt, Personagem perso) throws OutOfBaseException, OccupiedException, IndexOutOfBoundsException{
         if (side == 0 && pt.y > 5) {
             throw new OutOfBaseException();
         } else if (side == 1 && pt.y < 23) {

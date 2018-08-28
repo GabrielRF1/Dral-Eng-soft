@@ -172,7 +172,7 @@ public class PlayerCard extends javax.swing.JFrame {
         if (ControladorDoGame.getObject().isFirstDeployer()) {
             ControladorDoGame.getObject().setFirstDeployer(false);
             PlayerCard cardA = new PlayerCard();
-            cardA.setLocationRelativeTo(null);
+            cardA.setLocationRelativeTo(this);
             cardA.setResizable(false);
             cardA.setVisible(true);
         }
@@ -192,12 +192,12 @@ public class PlayerCard extends javax.swing.JFrame {
     private void posicionarGuerreiros(int qntGuer, Jogador j) {
         int i = 0;
         while (i < qntGuer) {
-            int x = Integer.parseInt(JOptionPane.showInputDialog("Coordenada x para seu " + (i + 1) + "º guerreiro"));
-            int y = Integer.parseInt(JOptionPane.showInputDialog("Coordenada y para seu " + (i + 1) + "º guerreiro"));
+            int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Coordenada x para seu " + (i + 1) + "º guerreiro"));
+            int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Coordenada y para seu " + (i + 1) + "º guerreiro"));
             try {
                 j.inicializarPecas(new Point(x, y), new Guerreiro(30, 0, j, new Point(x, y)));
                 i++;
-            } catch (OutOfBaseException ex) {
+            } catch (OutOfBaseException | IndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(this, "coloque em até o ponto (n, 5) para jogador 1\n"
                         + "e até (n, 23) para jogador 2\n"
                         + "onde n pode ser qualquer um dos (0...27) pontos x", "Região errada", JOptionPane.INFORMATION_MESSAGE);
@@ -210,12 +210,12 @@ public class PlayerCard extends javax.swing.JFrame {
     private void posicionarArqueiros(int qntdArq, Jogador j) {
         int i = 0;
         while (i < qntdArq) {
-            int x = Integer.parseInt(JOptionPane.showInputDialog("Coordenada x para seu " + (i + 1) + "º Arqueiro"));
-            int y = Integer.parseInt(JOptionPane.showInputDialog("Coordenada y para seu " + (i + 1) + "º Arqueiro"));
+            int x = Integer.parseInt(JOptionPane.showInputDialog(this, "Coordenada x para seu " + (i + 1) + "º Arqueiro"));
+            int y = Integer.parseInt(JOptionPane.showInputDialog(this, "Coordenada y para seu " + (i + 1) + "º Arqueiro"));
             try {
                 j.inicializarPecas(new Point(x, y), new Arqueiro(5, 5, j, new Point(x, y)));
                 i++;
-            } catch (OutOfBaseException ex) {
+            } catch (OutOfBaseException | IndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(this, "coloque em até o ponto (n, 5) para jogador 1\n"
                         + "e até (n, 23) para jogador 2\n"
                         + "onde n pode ser qualquer um dos (0...27) pontos x", "Região errada", JOptionPane.INFORMATION_MESSAGE);
@@ -228,12 +228,12 @@ public class PlayerCard extends javax.swing.JFrame {
     private void posicionarBardo(int qntdBard, Jogador j) {
         int i = 0;
         while (i < qntdBard) {
-            int x = Integer.parseInt(JOptionPane.showInputDialog("Coordenada x para seu " + (i + 1) + "º Bardo"));
-            int y = Integer.parseInt(JOptionPane.showInputDialog("Coordenada y para seu " + (i + 1) + "º Bardo"));
+            int x = Integer.parseInt(JOptionPane.showInputDialog(this,"Coordenada x para seu " + (i + 1) + "º Bardo"));
+            int y = Integer.parseInt(JOptionPane.showInputDialog(this,"Coordenada y para seu " + (i + 1) + "º Bardo"));
             try {
                 j.inicializarPecas(new Point(x, y), new Bardo(15, 2, j, new Point(x, y)));
                 i++;
-            } catch (OutOfBaseException ex) {
+            } catch (OutOfBaseException | IndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(this, "coloque em até o ponto (n, 5) para jogador 1\n"
                         + "e até (n, 23) para jogador 2\n"
                         + "onde n pode ser qualquer um dos (0...27) pontos x", "Região errada", JOptionPane.INFORMATION_MESSAGE);
@@ -246,12 +246,12 @@ public class PlayerCard extends javax.swing.JFrame {
     private void posicionarClerigo(int qntdCler, Jogador j) {
         int i = 0;
         while (i < qntdCler) {
-            int x = Integer.parseInt(JOptionPane.showInputDialog("Coordenada x para seu " + (i + 1) + "º Clerigo"));
-            int y = Integer.parseInt(JOptionPane.showInputDialog("Coordenada y para seu " + (i + 1) + "º Clerigo"));
+            int x = Integer.parseInt(JOptionPane.showInputDialog(this,"Coordenada x para seu " + (i + 1) + "º Clerigo"));
+            int y = Integer.parseInt(JOptionPane.showInputDialog(this,"Coordenada y para seu " + (i + 1) + "º Clerigo"));
             try {
                 j.inicializarPecas(new Point(x, y), new Clerigo(7, 20, j, new Point(x, y)));
                 i++;
-            } catch (OutOfBaseException ex) {
+            } catch (OutOfBaseException | IndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(this, "coloque em até o ponto (n, 5) para jogador 1\n"
                         + "e até (n, 23) para jogador 2\n"
                         + "onde n pode ser qualquer um dos (0...27) pontos x", "Região errada", JOptionPane.INFORMATION_MESSAGE);
@@ -264,12 +264,12 @@ public class PlayerCard extends javax.swing.JFrame {
     private void posicionarAssassino(int qntdAss, Jogador j) {
         int i = 0;
         while (i < qntdAss) {
-            int x = Integer.parseInt(JOptionPane.showInputDialog("Coordenada x para seu " + (i + 1) + "º Assassino"));
-            int y = Integer.parseInt(JOptionPane.showInputDialog("Coordenada y para seu " + (i + 1) + "º Assassino"));
+            int x = Integer.parseInt(JOptionPane.showInputDialog(this,"Coordenada x para seu " + (i + 1) + "º Assassino"));
+            int y = Integer.parseInt(JOptionPane.showInputDialog(this,"Coordenada y para seu " + (i + 1) + "º Assassino"));
             try {
                 j.inicializarPecas(new Point(x, y), new Assassino(7, 6, j, new Point(x, y)));
                 i++;
-            } catch (OutOfBaseException ex) {
+            } catch (OutOfBaseException | IndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(this, "coloque em até o ponto (n, 5) para jogador 1\n"
                         + "e até (n, 23) para jogador 2\n"
                         + "onde n pode ser qualquer um dos (0...27) pontos x", "Região errada", JOptionPane.INFORMATION_MESSAGE);

@@ -91,7 +91,7 @@ public class TabuleiroView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private void chamarCard() {
         PlayerCard cardA = new PlayerCard();
-        cardA.setLocationRelativeTo(null);
+        cardA.setLocation(getX()+getWidth(), getY());
         cardA.setResizable(false);
         cardA.setVisible(true);
     }
