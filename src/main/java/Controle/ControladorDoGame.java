@@ -5,17 +5,10 @@
  */
 package Controle;
 
-import Modelo.Arqueiro;
-import Modelo.Assassino;
-import Modelo.Bardo;
-import Modelo.Clerigo;
-import Modelo.Guerreiro;
 import Modelo.Jogador;
 import Modelo.Personagem;
 import Modelo.Tabuleiro;
 import java.awt.Point;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *

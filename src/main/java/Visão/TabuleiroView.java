@@ -125,11 +125,11 @@ public class TabuleiroView extends javax.swing.JFrame {
         campoGrafico[ponto.x][ponto.y].setSelected(false);
         if (Tabuleiro.getObject().getTabuleiro()[ponto.x][ponto.y].getPersonagem() != null && lastClicked == null) {
             lastClicked = ponto;
+        } else if (lastClicked == ponto) {
+            lastClicked = null;
         } else if (lastClicked != null
                 && Tabuleiro.getObject().getTabuleiro()[ponto.x][ponto.y].getPersonagem() == null) {
             ControladorDoGame.getObject().jogarTurno(lastClicked, ponto);
-            lastClicked = null;
-        } else if (lastClicked == ponto) {
             lastClicked = null;
         }
         campoGrafico = atualizarCampo();
